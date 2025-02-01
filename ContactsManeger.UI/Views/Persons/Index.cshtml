@@ -1,0 +1,117 @@
+﻿@model IEnumerable<PersonResponse>
+
+@{
+    ViewBag.Title = "Persons";
+}
+<form asp-controller="Persons" asp-action="Index" method="get" class="container mt-4">
+    <h1 class="mb-4 text-center">Persons</h1>
+    <div class="row g-3">
+        <div class="col-md-4">
+            <select class="form-select" name="searchBy">
+                @foreach (var field in ViewBag.SearchFields)
+                {
+                    if (field.Key == ViewBag.CurrentSearchBy)
+                    {
+                        <option value="@field.Key" selected="selected">@field.Value</option>
+                    }
+                    else
+                    {
+                        <option value="@field.Key">@field.Value</option>
+                    }
+                }
+            </select>
+        </div>
+
+        <div class="col-md-4">
+            <input type="search" id="Search" class="form-control" placeholder="Search" name="searchString" value="@ViewBag.CurrentSearchString" />
+        </div>
+
+        <!-- Buttons and Dropdown in the same row as the search box -->
+        <div class="col-md-4 d-flex justify-content-between align-items-center">
+            <button class="btn btn-primary"><i class="fas fa-search"></i> Search</button>
+            <a asp-controller="Persons" asp-action="Index" class="btn btn-secondary"><i class="fas fa-times"></i> Clear all</a>
+
+            <!-- Dropdown Menu for Create and Download Options -->
+            <div class="btn-group">
+                <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-download"></i> Actions
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" asp-controller="Persons" asp-action="Create"><i class="fa-solid fa-circle-plus"></i> Create Person</a></li>
+                    <li><a class="dropdown-item" asp-controller="Persons" asp-action="PersonsPdf"><i class="fa-solid fa-file-pdf"></i> Download as PDF</a></li>
+                    <li><a class="dropdown-item" asp-controller="Persons" asp-action="PersonsCSV"><i class="fa-solid fa-file-csv"></i> Download as CSV</a></li>
+                    <li><a class="dropdown-item" asp-controller="Persons" asp-action="PersonsCSV"><i class="fa-solid fa-file-excel"></i> Download as Excel</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <table class="table table-bordered table-striped mt-4">
+        <thead class="table-dark">
+            <tr>
+                @await Html.PartialAsync("_GridColumnHeader", new ViewDataDictionary(ViewData) {
+                { "ColumnName", nameof(PersonResponse.PersonName) },
+                { "DisplayName", "Person Name" },
+                })
+
+                @await Html.PartialAsync("_GridColumnHeader", new ViewDataDictionary(ViewData) {
+                { "ColumnName", nameof(PersonResponse.Email) },
+                { "DisplayName", "Email" },
+                })
+
+                @await Html.PartialAsync("_GridColumnHeader", new ViewDataDictionary(ViewData) {
+                { "ColumnName", nameof(PersonResponse.DateOfBirth) },
+                { "DisplayName", "Date of Birth" },
+                })
+
+                @await Html.PartialAsync("_GridColumnHeader", new ViewDataDictionary(ViewData) {
+                { "ColumnName", nameof(PersonResponse.Age) },
+                { "DisplayName", "Age" },
+                })
+
+                @await Html.PartialAsync("_GridColumnHeader", new ViewDataDictionary(ViewData) {
+                { "ColumnName", nameof(PersonResponse.Gender) },
+                { "DisplayName", "Gender" },
+                })
+
+                @await Html.PartialAsync("_GridColumnHeader", new ViewDataDictionary(ViewData) {
+                { "ColumnName", nameof(PersonResponse.Country) },
+                { "DisplayName", "Country" },
+                })
+
+                @await Html.PartialAsync("_GridColumnHeader", new ViewDataDictionary(ViewData) {
+                { "ColumnName", nameof(PersonResponse.Address) },
+                { "DisplayName", "Address" },
+                })
+
+                @await Html.PartialAsync("_GridColumnHeader", new ViewDataDictionary(ViewData) {
+                { "ColumnName", nameof(PersonResponse.ReceiveNewsLetters) },
+                { "DisplayName", "Receive News Letters" },
+                })
+
+                <td class="text-primary fw-bold">Actions</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (PersonResponse person in Model)
+            {
+                <tr>
+                    <td>@person.PersonName</td>
+                    <td>@person.Email</td>
+                    <td>@person.DateOfBirth?.ToString("dd MMM yyyy")</td>
+                    <td>@person.Age</td>
+                    <td>@person.Gender</td>
+                    <td>@person.Country</td>
+                    <td>@person.Address</td>
+                    <td>@person.ReceiveNewsLetters</td>
+                    <td>
+                        <div class="d-flex gap-2">
+                            <a asp-controller="Persons" asp-action="Edit" asp-route-personId="@person.PersonID" class="btn btn-success"><i class="fas fa-edit"></i> Edit</a>
+                            <a asp-controller="Persons" asp-action="Delete" asp-route-personId="@person.PersonID" class="btn btn-danger"><i class="fas fa-trash"></i> Delete</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</form>

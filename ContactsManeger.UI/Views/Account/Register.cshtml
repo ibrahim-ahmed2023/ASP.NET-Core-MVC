@@ -1,0 +1,87 @@
+﻿@model RegisterDTO
+@{
+    ViewBag.Title = "Register";
+}
+    <div class="card shadow-sm p-4">
+        <div class="card-body">
+        <p class="text-center ">Already Registered? <a asp-action="Login" asp-controller="Account" class="btn btn-success">Login</a></p>
+            <h2 class="text-center">Register</h2>
+            <form asp-controller="Account" asp-action="Register" method="post" class="mt-3">
+
+
+            @*UserType*@
+            <div class="mb-3">
+                <label asp-for="UserType" class="form-label">User Type</label>
+                <div class="form-check">
+                    <input asp-for="UserType" id="User" type="radio" value="User" class="form-check-input" checked />
+                    <label for="User" class="form-check-label">User</label>
+                </div>
+                <div class="form-check">
+                    <input asp-for="UserType" id="Admin" type="radio" value="Admin" class="form-check-input" />
+                    <label for="Admin" class="form-check-label">Admin</label>
+                </div>
+            </div>
+
+                @*PersonName*@
+                <div class="mb-3">
+                    <label asp-for="PersonName" class="form-label">Name</label>
+                    <input asp-for="PersonName" class="form-control" />
+                    <span asp-validation-for="PersonName" class="text-danger"></span>
+                </div>
+
+                @*Email*@
+                <div class="mb-3">
+                    <label asp-for="Email" class="form-label">Email</label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                @*Password*@
+                <div class="mb-3">
+                    <label asp-for="Password" class="form-label">Password</label>
+                    <input asp-for="Password" type="password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+                @*ConfirmPassword*@
+                <div class="mb-3">
+                    <label asp-for="ConfirmPassword" class="form-label">Confirm Password</label>
+                    <input asp-for="ConfirmPassword" type="password" class="form-control" />
+                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                </div>
+
+                @*Phone*@
+                <div class="mb-3">
+                    <label asp-for="Phone" class="form-label">Phone</label>
+                    <input asp-for="Phone" class="form-control" />
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+
+                @*Register button*@
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </div>
+
+                <div asp-validation-summary="All" class="text-danger mt-2"></div>
+
+                @if (ViewBag.Errors != null)
+                {
+                    <div class="alert alert-danger mt-2">
+                        <ul class="mb-0">
+                            @foreach (string error in ViewBag.Errors)
+                            {
+                                <li>@error</li>
+                            }
+                        </ul>
+                    </div>
+                }
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.4/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+}

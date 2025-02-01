@@ -1,0 +1,9 @@
+2025-01-30 17:11:56.717 +02:00 [INF] User profile is available. Using 'C:\Users\M\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-01-30 17:11:56.799 +02:00 [INF] Now listening on: http://localhost:5008
+2025-01-30 17:11:57.802 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5008/ - null null
+2025-01-30 17:11:57.881 +02:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /

@@ -1,0 +1,354 @@
+2025-01-30 16:50:27.373 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-30 16:50:27.377 +02:00 [INF] Hosting environment: Development
+2025-01-30 16:50:27.378 +02:00 [INF] Content root path: C:\Users\M\Desktop\ContactsManeger.Solution\ContactsManeger.UI
+2025-01-30 16:50:29.522 +02:00 [ERR] Connection id "0HNA17LNQ9EQR", Request id "0HNA17LNQ9EQR:00000001": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpResponseHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_LastModified(StringValues value)
+   at CRUDExample.Filters.ResultFilters.PersonsListResultFilter.OnResultExecutionAsync(ResultExecutingContext context, ResultExecutionDelegate next) in C:\Users\M\Desktop\ContactsManeger.Solution\ContactsManeger.UI\Filters\ResultFilters\PersonsListResultFilter.cs:line 22
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.HttpLogging.HttpLoggingMiddleware.InvokeInternal(HttpContext context, HttpLoggingOptions options, HttpLoggingAttribute loggingAttribute, HttpLoggingFields loggingFields)
+   at Microsoft.AspNetCore.HttpLogging.HttpLoggingMiddleware.InvokeInternal(HttpContext context, HttpLoggingOptions options, HttpLoggingAttribute loggingAttribute, HttpLoggingFields loggingFields)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.WebTools.BrowserLink.Net.BrowserLinkMiddleware.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2025-01-30 16:52:49.272 +02:00 [INF] User profile is available. Using 'C:\Users\M\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-01-30 16:52:49.351 +02:00 [INF] Now listening on: http://localhost:5008
+2025-01-30 16:52:51.010 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5008/ - null null
+2025-01-30 16:52:51.086 +02:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /
+2025-01-30 16:52:51.099 +02:00 [INF] Executing endpoint 'CRUDExample.Controllers.PersonsController.Index (ContactsManeger.UI)'
+2025-01-30 16:52:51.123 +02:00 [INF] Route matched with {action = "Index", controller = "Persons"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, System.String, System.String, ServiceContracts.Enums.SortOrderOptions) on controller CRUDExample.Controllers.PersonsController (ContactsManeger.UI).
+2025-01-30 16:52:51.192 +02:00 [INF] Before logic - ResponseHeaderActionFilter
+2025-01-30 16:52:51.196 +02:00 [INF] Before logic - ResponseHeaderActionFilter
+2025-01-30 16:52:51.203 +02:00 [INF] Before logic - ResponseHeaderActionFilter
+2025-01-30 16:52:51.205 +02:00 [INF] PersonsListActionFilter.OnActionExecuting method
+2025-01-30 16:52:51.246 +02:00 [INF] Executing action method CRUDExample.Controllers.PersonsController.Index (ContactsManeger.UI) - Validation state: "Invalid"
+2025-01-30 16:52:51.248 +02:00 [INF] Index action method of PersonsController
+2025-01-30 16:52:51.251 +02:00 [INF] GetFilteredPersons of PersonsService
+2025-01-30 16:52:51.744 +02:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PersonID], [p].[Address], [p].[CountryID], [p].[DateOfBirth], [p].[Email], [p].[Gender], [p].[PersonName], [p].[ReceiveNewsLetters], [p].[TaxIdentificationNumber], [c].[CountryId], [c].[CountryName]
+FROM [Persons] AS [p]
+LEFT JOIN [countries] AS [c] ON [p].[CountryID] = [c].[CountryId]
+2025-01-30 16:52:51.785 +02:00 [INF] Time for Filtered Persons from Database completed in 533.2 ms
+2025-01-30 16:52:51.789 +02:00 [INF] GetSortedPersons of PersonsService
+2025-01-30 16:52:51.792 +02:00 [INF] Executed action method CRUDExample.Controllers.PersonsController.Index (ContactsManeger.UI), returned result Microsoft.AspNetCore.Mvc.ViewResult in 542.6203ms.
+2025-01-30 16:52:51.797 +02:00 [INF] PersonsListActionFilter.OnActionExecuted method
+2025-01-30 16:52:51.812 +02:00 [INF] Before logic - ResponseHeaderActionFilter
+2025-01-30 16:52:51.813 +02:00 [INF] Before logic - ResponseHeaderActionFilter
+2025-01-30 16:52:51.814 +02:00 [INF] Before logic - ResponseHeaderActionFilter
+2025-01-30 16:52:51.816 +02:00 [INF] PersonsListResultFilter.OnResultExecutionAsync - before
+2025-01-30 16:52:51.819 +02:00 [INF] Executing ViewResult, running view Index.
+2025-01-30 16:52:51.891 +02:00 [INF] Executed ViewResult - view Index executed in 72.8519ms.
+2025-01-30 16:52:51.896 +02:00 [INF] PersonsListResultFilter.OnResultExecutionAsync - after
+2025-01-30 16:52:51.940 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5008/_framework/aspnetcore-browser-refresh.js - null null
+2025-01-30 16:52:51.940 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5008/_vs/browserLink - null null
+2025-01-30 16:52:51.941 +02:00 [INF] Executed action CRUDExample.Controllers.PersonsController.Index (ContactsManeger.UI) in 815.2651ms
+2025-01-30 16:52:51.944 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5008/_framework/aspnetcore-browser-refresh.js - 200 16107 application/javascript; charset=utf-8 5.5109ms
+2025-01-30 16:52:51.946 +02:00 [INF] Executed endpoint 'CRUDExample.Controllers.PersonsController.Index (ContactsManeger.UI)'
+2025-01-30 16:52:51.953 +02:00 [INF] Response:
+StatusCode: 200
+Content-Type: text/html; charset=utf-8
+Date: Thu, 30 Jan 2025 14:52:51 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+My-Key-From-Global: [Redacted]
+MyKey-FromAction: [Redacted]
+My-Key-From-Controller: [Redacted]
+2025-01-30 16:52:51.955 +02:00 [ERR] HTTP GET / responded 500 in 871.1219 ms
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpResponseHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_LastModified(StringValues value)
+   at CRUDExample.Filters.ResultFilters.PersonsListResultFilter.OnResultExecutionAsync(ResultExecutingContext context, ResultExecutionDelegate next) in C:\Users\M\Desktop\ContactsManeger.Solution\ContactsManeger.UI\Filters\ResultFilters\PersonsListResultFilter.cs:line 22
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.HttpLogging.HttpLoggingMiddleware.InvokeInternal(HttpContext context, HttpLoggingOptions options, HttpLoggingAttribute loggingAttribute, HttpLoggingFields loggingFields)
+   at Microsoft.AspNetCore.HttpLogging.HttpLoggingMiddleware.InvokeInternal(HttpContext context, HttpLoggingOptions options, HttpLoggingAttribute loggingAttribute, HttpLoggingFields loggingFields)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2025-01-30 16:52:51.967 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5008/_vs/browserLink - 200 null text/javascript; charset=UTF-8 27.7152ms
+2025-01-30 16:52:51.973 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpResponseHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_LastModified(StringValues value)
+   at CRUDExample.Filters.ResultFilters.PersonsListResultFilter.OnResultExecutionAsync(ResultExecutingContext context, ResultExecutionDelegate next) in C:\Users\M\Desktop\ContactsManeger.Solution\ContactsManeger.UI\Filters\ResultFilters\PersonsListResultFilter.cs:line 22
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.HttpLogging.HttpLoggingMiddleware.InvokeInternal(HttpContext context, HttpLoggingOptions options, HttpLoggingAttribute loggingAttribute, HttpLoggingFields loggingFields)
+   at Microsoft.AspNetCore.HttpLogging.HttpLoggingMiddleware.InvokeInternal(HttpContext context, HttpLoggingOptions options, HttpLoggingAttribute loggingAttribute, HttpLoggingFields loggingFields)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-01-30 16:52:51.979 +02:00 [WRN] The response has already started, the error page middleware will not be executed.
+2025-01-30 16:52:51.980 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpResponseHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_LastModified(StringValues value)
+   at CRUDExample.Filters.ResultFilters.PersonsListResultFilter.OnResultExecutionAsync(ResultExecutingContext context, ResultExecutionDelegate next) in C:\Users\M\Desktop\ContactsManeger.Solution\ContactsManeger.UI\Filters\ResultFilters\PersonsListResultFilter.cs:line 22
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.HttpLogging.HttpLoggingMiddleware.InvokeInternal(HttpContext context, HttpLoggingOptions options, HttpLoggingAttribute loggingAttribute, HttpLoggingFields loggingFields)
+   at Microsoft.AspNetCore.HttpLogging.HttpLoggingMiddleware.InvokeInternal(HttpContext context, HttpLoggingOptions options, HttpLoggingAttribute loggingAttribute, HttpLoggingFields loggingFields)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-01-30 16:52:51.985 +02:00 [WRN] The response has already started, the error page middleware will not be executed.
+2025-01-30 16:52:52.000 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5008/ - 200 null text/html; charset=utf-8 993.8697ms
+2025-01-30 16:52:55.280 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5008/Account/Login - null null
+2025-01-30 16:52:55.319 +02:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /Account/Login
+2025-01-30 16:52:55.321 +02:00 [INF] Executing endpoint 'ContactsManager.UI.Controllers.AccountController.Login (ContactsManeger.UI)'
+2025-01-30 16:52:55.324 +02:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller ContactsManager.UI.Controllers.AccountController (ContactsManeger.UI).
+2025-01-30 16:52:55.328 +02:00 [INF] Before logic - ResponseHeaderActionFilter
+2025-01-30 16:52:55.338 +02:00 [INF] Executing action method ContactsManager.UI.Controllers.AccountController.Login (ContactsManeger.UI) - Validation state: "Valid"
+2025-01-30 16:52:55.339 +02:00 [INF] Executed action method ContactsManager.UI.Controllers.AccountController.Login (ContactsManeger.UI), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.2541ms.
+2025-01-30 16:52:55.340 +02:00 [INF] Before logic - ResponseHeaderActionFilter
+2025-01-30 16:52:55.341 +02:00 [INF] Executing ViewResult, running view Login.
+2025-01-30 16:52:55.375 +02:00 [INF] Executed ViewResult - view Login executed in 34.4634ms.
+2025-01-30 16:52:55.377 +02:00 [INF] Executed action ContactsManager.UI.Controllers.AccountController.Login (ContactsManeger.UI) in 52.091ms
+2025-01-30 16:52:55.378 +02:00 [INF] Executed endpoint 'ContactsManager.UI.Controllers.AccountController.Login (ContactsManeger.UI)'
+2025-01-30 16:52:55.381 +02:00 [INF] Response:
+StatusCode: 200
+Content-Type: text/html; charset=utf-8
+Date: Thu, 30 Jan 2025 14:52:54 GMT
+Server: Kestrel
+Cache-Control: [Redacted]
+Pragma: [Redacted]
+Set-Cookie: [Redacted]
+Transfer-Encoding: chunked
+My-Key-From-Global: [Redacted]
+X-Frame-Options: [Redacted]
+2025-01-30 16:52:55.383 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5008/_framework/aspnetcore-browser-refresh.js - null null
+2025-01-30 16:52:55.384 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5008/_vs/browserLink - null null
+2025-01-30 16:52:55.386 +02:00 [INF] HTTP GET /Account/Login responded 200 in 67.1242 ms
+2025-01-30 16:52:55.389 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5008/_framework/aspnetcore-browser-refresh.js - 200 16107 application/javascript; charset=utf-8 5.1621ms
+2025-01-30 16:52:55.401 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5008/Account/Login - 200 null text/html; charset=utf-8 120.6081ms
+2025-01-30 16:52:55.406 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5008/_vs/browserLink - 200 null text/javascript; charset=UTF-8 21.7997ms
+2025-01-30 16:52:55.420 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5008/favicon.ico - null null
+2025-01-30 16:52:55.424 +02:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /favicon.ico
+2025-01-30 16:52:55.428 +02:00 [INF] Response:
+StatusCode: 404
+2025-01-30 16:52:55.429 +02:00 [INF] HTTP GET /favicon.ico responded 404 in 5.0804 ms
+2025-01-30 16:52:55.430 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5008/favicon.ico - 404 0 null 9.7442ms
+2025-01-30 16:52:55.433 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5008/favicon.ico, Response status code: 404
+2025-01-30 16:53:06.400 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5008/Account/Login - application/x-www-form-urlencoded 236
+2025-01-30 16:53:06.424 +02:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: POST
+Scheme: http
+PathBase: 
+Path: /Account/Login
+2025-01-30 16:53:06.426 +02:00 [INF] Executing endpoint 'ContactsManager.UI.Controllers.AccountController.Login (ContactsManeger.UI)'
+2025-01-30 16:53:06.433 +02:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(ContactsManager.Core.DTO.LoginDTO) on controller ContactsManager.UI.Controllers.AccountController (ContactsManeger.UI).
+2025-01-30 16:53:06.461 +02:00 [INF] Before logic - ResponseHeaderActionFilter
+2025-01-30 16:53:06.476 +02:00 [INF] Executing action method ContactsManager.UI.Controllers.AccountController.Login (ContactsManeger.UI) - Validation state: "Valid"
+2025-01-30 16:53:06.519 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PersonName], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-01-30 16:53:06.632 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2025-01-30 16:53:06.650 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-01-30 16:53:06.656 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2025-01-30 16:53:06.658 +02:00 [INF] Executed action method ContactsManager.UI.Controllers.AccountController.Login (ContactsManeger.UI), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 179.6946ms.
+2025-01-30 16:53:06.659 +02:00 [INF] Before logic - ResponseHeaderActionFilter
+2025-01-30 16:53:06.660 +02:00 [INF] Executing RedirectResult, redirecting to /Persons/Index.
+2025-01-30 16:53:06.661 +02:00 [INF] Executed action ContactsManager.UI.Controllers.AccountController.Login (ContactsManeger.UI) in 223.4896ms
+2025-01-30 16:53:06.661 +02:00 [INF] Executed endpoint 'ContactsManager.UI.Controllers.AccountController.Login (ContactsManeger.UI)'
+2025-01-30 16:53:06.662 +02:00 [INF] Response:
+StatusCode: 302
+Cache-Control: [Redacted]
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Location: /Persons/Index
+Pragma: [Redacted]
+Set-Cookie: [Redacted]
+My-Key-From-Global: [Redacted]
+2025-01-30 16:53:06.662 +02:00 [INF] HTTP POST /Account/Login responded 302 in 238.0419 ms
+2025-01-30 16:53:06.669 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5008/Account/Login - 302 0 null 268.8018ms
+2025-01-30 16:53:06.670 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5008/Persons/Index - null null
+2025-01-30 16:53:06.706 +02:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /Persons/Index
+2025-01-30 16:53:06.709 +02:00 [INF] Executing endpoint 'CRUDExample.Controllers.PersonsController.Index (ContactsManeger.UI)'
+2025-01-30 16:53:06.713 +02:00 [INF] Route matched with {action = "Index", controller = "Persons"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, System.String, System.String, ServiceContracts.Enums.SortOrderOptions) on controller CRUDExample.Controllers.PersonsController (ContactsManeger.UI).
+2025-01-30 16:53:06.715 +02:00 [INF] Before logic - ResponseHeaderActionFilter
+2025-01-30 16:53:06.716 +02:00 [INF] Before logic - ResponseHeaderActionFilter
+2025-01-30 16:53:06.716 +02:00 [INF] Before logic - ResponseHeaderActionFilter
+2025-01-30 16:53:06.716 +02:00 [INF] PersonsListActionFilter.OnActionExecuting method
+2025-01-30 16:53:06.727 +02:00 [INF] Executing action method CRUDExample.Controllers.PersonsController.Index (ContactsManeger.UI) - Validation state: "Invalid"
+2025-01-30 16:53:06.728 +02:00 [INF] Index action method of PersonsController
+2025-01-30 16:53:06.728 +02:00 [INF] GetFilteredPersons of PersonsService
+2025-01-30 16:53:06.767 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PersonID], [p].[Address], [p].[CountryID], [p].[DateOfBirth], [p].[Email], [p].[Gender], [p].[PersonName], [p].[ReceiveNewsLetters], [p].[TaxIdentificationNumber], [c].[CountryId], [c].[CountryName]
+FROM [Persons] AS [p]
+LEFT JOIN [countries] AS [c] ON [p].[CountryID] = [c].[CountryId]
+2025-01-30 16:53:06.769 +02:00 [INF] Time for Filtered Persons from Database completed in 40.5 ms
+2025-01-30 16:53:06.770 +02:00 [INF] GetSortedPersons of PersonsService
+2025-01-30 16:53:06.770 +02:00 [INF] Executed action method CRUDExample.Controllers.PersonsController.Index (ContactsManeger.UI), returned result Microsoft.AspNetCore.Mvc.ViewResult in 42.705ms.
+2025-01-30 16:53:06.771 +02:00 [INF] PersonsListActionFilter.OnActionExecuted method
+2025-01-30 16:53:06.772 +02:00 [INF] Before logic - ResponseHeaderActionFilter
+2025-01-30 16:53:06.772 +02:00 [INF] Before logic - ResponseHeaderActionFilter
+2025-01-30 16:53:06.772 +02:00 [INF] Before logic - ResponseHeaderActionFilter
+2025-01-30 16:53:06.773 +02:00 [INF] PersonsListResultFilter.OnResultExecutionAsync - before
+2025-01-30 16:53:06.773 +02:00 [INF] Executing ViewResult, running view Index.
+2025-01-30 16:53:06.777 +02:00 [INF] Executed ViewResult - view Index executed in 3.2303ms.
+2025-01-30 16:53:06.777 +02:00 [INF] PersonsListResultFilter.OnResultExecutionAsync - after
+2025-01-30 16:53:06.783 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5008/_vs/browserLink - null null
+2025-01-30 16:53:06.815 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5008/_framework/aspnetcore-browser-refresh.js - null null
+2025-01-30 16:53:06.824 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5008/_framework/aspnetcore-browser-refresh.js - 200 16107 application/javascript; charset=utf-8 23.3764ms
+2025-01-30 16:53:06.827 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5008/_vs/browserLink - 200 null text/javascript; charset=UTF-8 43.9514ms
+2025-01-30 16:53:06.816 +02:00 [INF] Executed action CRUDExample.Controllers.PersonsController.Index (ContactsManeger.UI) in 101.8619ms
+2025-01-30 16:53:06.833 +02:00 [INF] Executed endpoint 'CRUDExample.Controllers.PersonsController.Index (ContactsManeger.UI)'
+2025-01-30 16:53:06.834 +02:00 [INF] Response:
+StatusCode: 200
+Content-Type: text/html; charset=utf-8
+Date: Thu, 30 Jan 2025 14:53:06 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+My-Key-From-Global: [Redacted]
+MyKey-FromAction: [Redacted]
+My-Key-From-Controller: [Redacted]
+2025-01-30 16:53:06.835 +02:00 [ERR] HTTP GET /Persons/Index responded 500 in 128.8713 ms
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpResponseHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_LastModified(StringValues value)
+   at CRUDExample.Filters.ResultFilters.PersonsListResultFilter.OnResultExecutionAsync(ResultExecutingContext context, ResultExecutionDelegate next) in C:\Users\M\Desktop\ContactsManeger.Solution\ContactsManeger.UI\Filters\ResultFilters\PersonsListResultFilter.cs:line 22
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.HttpLogging.HttpLoggingMiddleware.InvokeInternal(HttpContext context, HttpLoggingOptions options, HttpLoggingAttribute loggingAttribute, HttpLoggingFields loggingFields)
+   at Microsoft.AspNetCore.HttpLogging.HttpLoggingMiddleware.InvokeInternal(HttpContext context, HttpLoggingOptions options, HttpLoggingAttribute loggingAttribute, HttpLoggingFields loggingFields)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2025-01-30 16:53:06.839 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpResponseHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_LastModified(StringValues value)
+   at CRUDExample.Filters.ResultFilters.PersonsListResultFilter.OnResultExecutionAsync(ResultExecutingContext context, ResultExecutionDelegate next) in C:\Users\M\Desktop\ContactsManeger.Solution\ContactsManeger.UI\Filters\ResultFilters\PersonsListResultFilter.cs:line 22
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.HttpLogging.HttpLoggingMiddleware.InvokeInternal(HttpContext context, HttpLoggingOptions options, HttpLoggingAttribute loggingAttribute, HttpLoggingFields loggingFields)
+   at Microsoft.AspNetCore.HttpLogging.HttpLoggingMiddleware.InvokeInternal(HttpContext context, HttpLoggingOptions options, HttpLoggingAttribute loggingAttribute, HttpLoggingFields loggingFields)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-01-30 16:53:06.844 +02:00 [WRN] The response has already started, the error page middleware will not be executed.
+2025-01-30 16:53:06.845 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpResponseHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_LastModified(StringValues value)
+   at CRUDExample.Filters.ResultFilters.PersonsListResultFilter.OnResultExecutionAsync(ResultExecutingContext context, ResultExecutionDelegate next) in C:\Users\M\Desktop\ContactsManeger.Solution\ContactsManeger.UI\Filters\ResultFilters\PersonsListResultFilter.cs:line 22
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.HttpLogging.HttpLoggingMiddleware.InvokeInternal(HttpContext context, HttpLoggingOptions options, HttpLoggingAttribute loggingAttribute, HttpLoggingFields loggingFields)
+   at Microsoft.AspNetCore.HttpLogging.HttpLoggingMiddleware.InvokeInternal(HttpContext context, HttpLoggingOptions options, HttpLoggingAttribute loggingAttribute, HttpLoggingFields loggingFields)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-01-30 16:53:06.881 +02:00 [WRN] The response has already started, the error page middleware will not be executed.
+2025-01-30 16:53:06.893 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5008/Persons/Index - 200 null text/html; charset=utf-8 222.7756ms

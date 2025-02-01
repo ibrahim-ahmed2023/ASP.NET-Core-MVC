@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-..." crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-..." crossorigin="anonymous" />
+    <style>
+        .navbar {
+        background-color: #007bff;
+        color: #fff;
+        padding: 1rem;
+        }
+
+        .navbar .navbar-brand {
+        font-size: 1.5rem;
+        color: #fff;
+        }
+
+        .navbar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        }
+
+        .navbar ul li {
+        margin-right: 1rem;
+        }
+
+        .navbar ul li a {
+        color: #fff;
+        text-decoration: none;
+        }
+
+        .page-content {
+        margin-top: 2rem;
+        }
+
+        table {
+        text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid p-0">
+        <div class="navbar w-100">
+            <div class="container d-flex justify-content-between align-items-center">
+                <div class="navbar-brand">
+                    <img src="~/myLogo.png" width="75" alt="CRUD System" asp-append-version="true"/>
+                </div>
+                <ul class="d-flex">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>
+                            <a href="~/persons/index"><i class="fas fa-users"></i> Persons</a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-user"></i>
+                            @User.Identity?.Name
+                        </li>
+                        <li>
+                            <a asp-controller="Account" asp-action="Logout"><i class="fa-solid fa-arrow-right-to-bracket"></i> Logout</a>
+                        </li>     
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li>
+                                <a asp-controller="Home" asp-area="Admin" asp-action="Index" class="btn btn-primary">Admin Home</a>
+                            </li>
+                        }
+                    }
+                    
+                    else
+                    {
+                        <li>
+                            <a asp-controller="Account" asp-action="Register"><i class="fa-regular fa-registered"></i> Register</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Account" asp-action="Login"><i class="fa-solid fa-arrow-right-to-bracket"></i> Login</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+
+        <div class="container page-content">
+            @RenderBody()
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
+    @RenderSection("Scripts" , required:false)
+</body>
+</html>

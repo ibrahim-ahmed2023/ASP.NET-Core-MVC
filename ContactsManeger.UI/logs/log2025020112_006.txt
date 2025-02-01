@@ -1,0 +1,41 @@
+2025-02-01 12:56:13.953 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-01 12:56:13.959 +02:00 [INF] Hosting environment: Development
+2025-02-01 12:56:13.966 +02:00 [INF] Content root path: C:\Users\M\Desktop\ContactsManeger.Solution\ContactsManeger.UI
+2025-02-01 12:58:03.825 +02:00 [INF] User profile is available. Using 'C:\Users\M\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-02-01 12:58:03.942 +02:00 [INF] Now listening on: https://localhost:5008
+2025-02-01 12:58:05.367 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5008/ - null null
+2025-02-01 12:58:05.441 +02:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /
+2025-02-01 12:58:05.457 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-02-01 12:58:05.465 +02:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2025-02-01 12:58:05.468 +02:00 [INF] Response:
+StatusCode: 302
+Location: https://localhost:5008/Account/Login?ReturnUrl=%2F
+2025-02-01 12:58:05.470 +02:00 [INF] HTTP GET / responded 302 in 29.7545 ms
+2025-02-01 12:58:05.482 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5008/ - 302 0 null 118.5878ms
+2025-02-01 12:58:05.485 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5008/Account/Login?ReturnUrl=%2F - null null
+2025-02-01 12:58:05.504 +02:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /Account/Login
+2025-02-01 12:58:05.510 +02:00 [INF] Executing endpoint 'ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)'
+2025-02-01 12:58:05.525 +02:00 [INF] Route matched with {action = "Login", controller = "Account", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller ContactsManager.UI.Controllers.AccountController (ContactsManager.UI).
+2025-02-01 12:58:05.530 +02:00 [INF] Antiforgery token validation failed. The required antiforgery cookie ".AspNetCore.Antiforgery.pz3PdBezUks" is not present.
+Microsoft.AspNetCore.Antiforgery.AntiforgeryValidationException: The required antiforgery cookie ".AspNetCore.Antiforgery.pz3PdBezUks" is not present.
+   at Microsoft.AspNetCore.Antiforgery.DefaultAntiforgery.ValidateRequestAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.ValidateAntiforgeryTokenAuthorizationFilter.OnAuthorizationAsync(AuthorizationFilterContext context)
+2025-02-01 12:58:05.533 +02:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.ValidateAntiforgeryTokenAuthorizationFilter'.
+2025-02-01 12:58:05.536 +02:00 [INF] Executing StatusCodeResult, setting HTTP status code 400
+2025-02-01 12:58:05.538 +02:00 [INF] Executed action ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI) in 8.2895ms
+2025-02-01 12:58:05.539 +02:00 [INF] Executed endpoint 'ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)'
+2025-02-01 12:58:05.539 +02:00 [INF] Response:
+StatusCode: 400
+2025-02-01 12:58:05.540 +02:00 [INF] HTTP GET /Account/Login responded 400 in 35.7037 ms
+2025-02-01 12:58:05.541 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5008/Account/Login?ReturnUrl=%2F - 400 0 null 56.4568ms

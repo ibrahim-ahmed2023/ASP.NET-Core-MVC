@@ -1,0 +1,59 @@
+﻿@model LoginDTO
+@{
+    ViewBag.Title = "Login";
+    ViewBag.CurrentUrl = "~/Account/Login";
+}
+
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card p-4 shadow-lg w-100" style="max-width: 400px;">
+        <div class="text-center mb-3">
+            <p>Not yet registered? <a asp-action="Register" asp-controller="Account" asp-route-ReturnUrl="@Context.Request.Query["ReturnUrl"]" class="text-decoration-none">Register</a></p>
+            <h2 class="h4">Login</h2>
+        </div>
+
+        <form asp-controller="Account" asp-action="Login" method="post">
+
+            <!-- Email -->
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label">Email</label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger small"></span>
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3">
+                <label asp-for="Password" class="form-label">Password</label>
+                <input asp-for="Password" type="password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger small"></span>
+            </div>
+
+            <!-- Login Button -->
+            <div class="mb-3 text-center">
+                <button class="btn btn-success w-100" type="submit">Login</button>
+            </div>
+
+            <!-- Validation Summary -->
+            <div asp-validation-summary="All" class="text-danger small text-center"></div>
+
+            @if (ViewBag.Errors != null)
+            {
+                <div class="text-danger small">
+                    <ul class="list-unstyled">
+                        @foreach (string error in ViewBag.Errors)
+                        {
+                            <li>@error</li>
+                        }
+                    </ul>
+                </div>
+            }
+        </form>
+    </div>
+</div>
+
+@section scripts
+{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" asp-fallback-test="window.jQuery" asp-fallback-src="~/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.4/jquery.validate.min.js" asp-fallback-test="window.jQuery.validator" asp-fallback-src="~/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js" asp-fallback-test="window.jQuery.validator.unobstrusive" asp-fallback-src="~/jquery.validate.unobtrusive.min.js"></script>
+}

@@ -1,0 +1,127 @@
+﻿@model PersonAddRequest
+@{
+    ViewBag.Title = "Create Person";
+}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary w-100">
+    <div class="container-fluid">
+        <a class="navbar-brand" asp-controller="Persons" asp-action="Index"><i class="fas fa-users"></i> Back to Persons List</a>
+    </div>
+</nav>
+
+<div class="container my-4">
+    <h2 class="mb-4">Create Person</h2>
+
+    <div class="card shadow-lg p-4">
+        <form asp-controller="Persons" asp-action="Create" method="post">
+
+            @*PersonName*@
+            <div class="mb-3 row">
+                <label asp-for="PersonName" class="col-sm-3 col-form-label">Person Name</label>
+                <div class="col-sm-9">
+                    <input asp-for="PersonName" class="form-control" />
+                    <span asp-validation-for="PersonName" class="text-danger"></span>
+                </div>
+            </div>
+
+            @*Email*@
+            <div class="mb-3 row">
+                <label asp-for="Email" class="col-sm-3 col-form-label">Email</label>
+                <div class="col-sm-9">
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+
+                </div>
+            </div>
+
+            @*DateOfBirth*@
+            <div class="mb-3 row">
+                <label asp-for="DateOfBirth" class="col-sm-3 col-form-label">Date of Birth</label>
+                <div class="col-sm-9">
+                    <input asp-for="DateOfBirth" class="form-control" />
+                    <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+
+                </div>
+            </div>
+
+            @*Gender*@
+            <div class="mb-3 row"> 
+                @{
+                   var genders = (string[])Enum.GetNames(typeof(GenderOptions));
+                }
+            
+                <label class="col-sm-3 col-form-label">Gender</label>
+                <div class="col-sm-9">
+                    @foreach (var gender in genders)
+                    {
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" asp-for="Gender" value="@gender">
+                            <label class="form-check-label" asp-for="Gender">@gender</label>
+                            <span asp-validation-for="Gender" class="text-danger"></span>
+
+                        </div>
+                    }
+                </div>
+            </div>
+
+            @*Country*@
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label" asp-for="CountryID">Country</label>
+                <div class="col-sm-9">
+                    <select asp-for="CountryID" class="form-select" asp-items="@ViewBag.Countries">
+                        <option value="">Please Select</option>
+                    </select>
+                    <span asp-validation-for="CountryID" class="text-danger"></span>
+                </div>
+            </div>
+
+            @*Address*@
+            <div class="mb-3 row">
+                <label asp-for="Address" class="col-sm-3 col-form-label">Address</label>
+                <div class="col-sm-9">
+                    <textarea asp-for="Address" class="form-control"></textarea>
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+            </div>
+
+            @*ReceiveNewsLetters*@
+            <div class="mb-3 row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-9">
+                    <div class="form-check">
+                        <input asp-for="ReceiveNewsLetters" value="true">
+                        <label asp-for="ReceiveNewsLetters" class="form-check-label">Receive News Letters</label>
+                        <span asp-validation-for="ReceiveNewsLetters" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            @*Submit*@
+            <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-9">
+                    <button class="btn btn-success me-2"><i class="fas fa-check"></i> Create</button>
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+@section Scripts{
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" 
+integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" asp-fallback-test="window.jquery" asp-fallback-src="~/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.21.0/jquery.validate.min.js" 
+integrity="sha512-KFHXdr2oObHKI9w4Hv1XPKc898mE4kgYx58oqsc/JqqdLMDI4YjOLzom+EMlW8HFUd0QfjfAvxSL6sEq/a42fQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" asp-fallback-test="window.jquery.validator" asp-fallback-src="~/jquery.validate.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js" 
+integrity="sha512-xq+Vm8jC94ynOikewaQXMEkJIOBp7iArs3IhFWSWdRT3Pq8wFz46p+ZDFAR7kHnSFf+zUv52B3prRYnbDRdgog=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" asp-fallback-test="window.jquery.validator.unobtrusive" 
+        asp-fallback-src="~/jquery.validate.unobtrusive.min.js"></script>
+        }

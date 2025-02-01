@@ -1,0 +1,12 @@
+2025-01-30 17:12:26.600 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-30 17:12:26.605 +02:00 [INF] Hosting environment: Development
+2025-01-30 17:12:26.606 +02:00 [INF] Content root path: C:\Users\M\Desktop\ContactsManeger.Solution\ContactsManeger.UI
+2025-01-30 17:13:25.735 +02:00 [INF] User profile is available. Using 'C:\Users\M\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-01-30 17:13:25.885 +02:00 [INF] Now listening on: http://localhost:5008
+2025-01-30 17:13:26.611 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5008/ - null null
+2025-01-30 17:13:26.688 +02:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /

@@ -1,0 +1,48 @@
+﻿@model PersonResponse
+
+@{
+    ViewBag.Title = "Delete Person";
+}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary w-100">
+    <div class="container-fluid">
+        <a class="navbar-brand" asp-controller="Persons" asp-action="Index"><i class="fas fa-users"></i> Back to Persons List</a>
+    </div>
+</nav>
+<h2 class="text-center my-4">Delete Person</h2>
+<h3 class="text-center text-danger">Are you sure to delete this person?</h3>
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form asp-controller="Persons" asp-action="Delete" method="post" class="p-4 border rounded shadow-sm bg-light">
+                <input type="hidden" asp-for="PersonID" />
+
+                @*PersonName*@
+                <div class="mb-3 row">
+                    <label asp-for="PersonName" class="col-sm-4 col-form-label">Person Name</label>
+                    <div class="col-sm-8">
+                        <input asp-for="PersonName" class="form-control" disabled="disabled" />
+                        <span asp-validation-for="PersonName" class="text-danger"></span>
+                    </div>
+                </div>
+
+                @*Email*@
+                <div class="mb-3 row">
+                    <label asp-for="Email" class="col-sm-4 col-form-label">Email</label>
+                    <div class="col-sm-8">
+                        <input asp-for="Email" class="form-control" disabled="disabled" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                </div>
+
+                @*Submit*@
+                <div class="d-flex justify-content-end">
+                    <button class="btn btn-danger me-2">Delete</button>
+                </div>
+
+                <div asp-validation-summary="All" class="text-danger mt-3"></div>
+            </form>
+        </div>
+    </div>
+</div>

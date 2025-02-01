@@ -1,0 +1,17 @@
+C:\Users\M\Desktop\ContactsManeger.Solution\ContactManager.Infrastructure\bin\Debug\net8.0\ContactManager.Infrastructure.deps.json
+C:\Users\M\Desktop\ContactsManeger.Solution\ContactManager.Infrastructure\bin\Debug\net8.0\ContactManager.Infrastructure.runtimeconfig.json
+C:\Users\M\Desktop\ContactsManeger.Solution\ContactManager.Infrastructure\bin\Debug\net8.0\ContactManager.Infrastructure.dll
+C:\Users\M\Desktop\ContactsManeger.Solution\ContactManager.Infrastructure\bin\Debug\net8.0\ContactManager.Infrastructure.pdb
+C:\Users\M\Desktop\ContactsManeger.Solution\ContactManager.Infrastructure\bin\Debug\net8.0\ContactsManager.Core.dll
+C:\Users\M\Desktop\ContactsManeger.Solution\ContactManager.Infrastructure\bin\Debug\net8.0\ContactsManager.Core.pdb
+C:\Users\M\Desktop\ContactsManeger.Solution\ContactManager.Infrastructure\obj\Debug\net8.0\ContactManager.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\M\Desktop\ContactsManeger.Solution\ContactManager.Infrastructure\obj\Debug\net8.0\ContactManager.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\M\Desktop\ContactsManeger.Solution\ContactManager.Infrastructure\obj\Debug\net8.0\ContactManager.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\M\Desktop\ContactsManeger.Solution\ContactManager.Infrastructure\obj\Debug\net8.0\ContactManager.Infrastructure.AssemblyInfo.cs
+C:\Users\M\Desktop\ContactsManeger.Solution\ContactManager.Infrastructure\obj\Debug\net8.0\ContactManager.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\M\Desktop\ContactsManeger.Solution\ContactManager.Infrastructure\obj\Debug\net8.0\ContactM.35643450.Up2Date
+C:\Users\M\Desktop\ContactsManeger.Solution\ContactManager.Infrastructure\obj\Debug\net8.0\ContactManager.Infrastructure.dll
+C:\Users\M\Desktop\ContactsManeger.Solution\ContactManager.Infrastructure\obj\Debug\net8.0\refint\ContactManager.Infrastructure.dll
+C:\Users\M\Desktop\ContactsManeger.Solution\ContactManager.Infrastructure\obj\Debug\net8.0\ContactManager.Infrastructure.pdb
+C:\Users\M\Desktop\ContactsManeger.Solution\ContactManager.Infrastructure\obj\Debug\net8.0\ContactManager.Infrastructure.genruntimeconfig.cache
+C:\Users\M\Desktop\ContactsManeger.Solution\ContactManager.Infrastructure\obj\Debug\net8.0\ref\ContactManager.Infrastructure.dll
